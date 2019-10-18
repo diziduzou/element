@@ -535,14 +535,14 @@
       },
 
       handleRangePick(val, close = true) {
+        this.onPick && this.onPick(val);
         const defaultTime = this.defaultTime || [];
+        console.log(this.defaultTime);
         const minDate = modifyWithTimeString(val.minDate, defaultTime[0]);
         const maxDate = modifyWithTimeString(val.maxDate, defaultTime[1]);
-
         if (this.maxDate === maxDate && this.minDate === minDate) {
           return;
         }
-        this.onPick && this.onPick(val);
         this.maxDate = maxDate;
         this.minDate = minDate;
 
