@@ -834,7 +834,9 @@ export default {
       this.$watch('format', (format) => {
         this.picker.format = format;
       });
-
+      this.$watch('defaultTime', (n) => {
+        this.picker.defaultTime = n;
+      });
       const updateOptions = () => {
         const options = this.pickerOptions;
 
